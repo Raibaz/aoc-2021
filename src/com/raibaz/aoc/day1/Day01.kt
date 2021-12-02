@@ -1,3 +1,7 @@
+package com.raibaz.aoc.day1
+
+import readInput
+
 fun main() {
     fun part1(input: List<String>): Int {
         return countIncreases(input.map { it.toInt() })
