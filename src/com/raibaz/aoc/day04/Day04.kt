@@ -1,11 +1,11 @@
-package com.raibaz.aoc.day4
+package com.raibaz.aoc.day04
 
 import readInput
 
 const val boardSize = 5
 
 fun main() {
-    val input = readInput("com/raibaz/aoc/day4/Day04")
+    val input = readInput("com/raibaz/aoc/day04/Day04")
 
     val extracted = input.first().split(",")
 

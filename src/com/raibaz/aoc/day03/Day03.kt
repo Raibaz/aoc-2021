@@ -1,10 +1,10 @@
-package com.raibaz.aoc.day3
+package com.raibaz.aoc.day03
 
 import readInput
 import kotlin.math.pow
 
 fun main() {
-    val input = readInput("com/raibaz/aoc/day3/Day03")
+    val input = readInput("com/raibaz/aoc/day03/Day03")
 
     val mostCommons = (0 until input.first().length).map { index ->
         findMostCommon(input.map { it[index] })

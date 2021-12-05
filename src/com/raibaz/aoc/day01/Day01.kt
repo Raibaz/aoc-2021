@@ -1,4 +1,4 @@
-package com.raibaz.aoc.day1
+package com.raibaz.aoc.day01
 
 import readInput
 

@@ -1,9 +1,9 @@
-package com.raibaz.aoc.day2
+package com.raibaz.aoc.day02
 
 import readInput
 
 fun main() {
-    val input = readInput("com/raibaz/aoc/day2/Day02")
+    val input = readInput("com/raibaz/aoc/day02/Day02")
 
     println(processInstructions(input))
 }
