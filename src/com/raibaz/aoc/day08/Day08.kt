@@ -3,7 +3,7 @@ package com.raibaz.aoc.day08
 import readInput
 
 fun main() {
-    val input = readInput("com/raibaz/aoc/day08/Day08")
+    val input = readInput("com/raibaz/aoc/day08/Day08_ced_10lines")
 
     // part1(input)
     part2(input)
@@ -50,7 +50,7 @@ class Line(
     var bottom: Char? = null
 ) {
     fun parse(input: List<String>) {
-        println("Parsing $input")
+        // println("Parsing $input")
         one = input.find { it.length == 2 }!!.sort()
         seven = input.find { it.length == 3 }!!.sort()
         four = input.find { it.length == 4 }!!.sort()
@@ -74,11 +74,22 @@ class Line(
 
         nine = input.find { it.length == 6 && it.sort() != six && !it.contains(bottomLeft!!)}!!.sort()
 
-        printOut()
+        // printOut()
+
+        """
+           top: 8
+           topleft: 6
+           topRight: 8
+           center: 7
+           bottom: 7
+           bottomLeft: 4
+           bottomRight: 9
+        """.trimIndent()
+
     }
 
     fun computeValue(input: List<String>): Int {
-        println("Computing value for $input")
+        // println("Computing value for $input")
         val ret = input.filter { it.isNotEmpty() }.joinToString("") {
             when (it.sort()) {
                 zero -> "0"
