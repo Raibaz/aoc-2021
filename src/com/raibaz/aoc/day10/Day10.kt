@@ -14,12 +14,11 @@ fun main() {
 }
 
 fun part1(input: List<String>) {
-    val corruptedCount = input.map {
-        it.getFirstIllegal()
+    val corruptedCount = input.mapNotNull {
+        it.getFirstIllegal().exceptionOrNull()
     }
-    .filter { it.isFailure }
     .sumOf {
-        when ((it.exceptionOrNull() as CorruptedStringException?)?.char) {
+        when ((it as CorruptedStringException?)?.char) {
             ')' -> 3
             ']' -> 57
             '}' -> 1197
@@ -32,13 +31,11 @@ fun part1(input: List<String>) {
 }
 
 fun part2(input: List<String>) {
-    val scores = input.map {
-        it.getFirstIllegal()
+    val scores = input.mapNotNull {
+        it.getFirstIllegal().getOrNull()
     }
-    .filter { it.isSuccess }
     .map {
-        val completion = it.getOrDefault(Stack()).countCompletion()
-        completion
+        it.countCompletion()
     }.sorted()
 
     println(scores[ceil((scores.size / 2).toDouble()).toInt()])
