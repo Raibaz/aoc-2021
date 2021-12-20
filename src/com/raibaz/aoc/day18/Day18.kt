@@ -37,7 +37,7 @@ sealed interface Token {
 typealias Number = LinkedList<Token>
 
 fun Number.stringify() = joinToString("") { Token.stringify(it) }
-fun parseNumber(string: String) = LinkedList(string.map { Token.tokenFor(it) }).mergeDigits()
+fun parseNumber(string: String) = LinkedList(string.map(Token::tokenFor)).mergeDigits()
 
 fun Number.mergeDigits(): Number {
     val toRemove = mutableListOf<Int>()
